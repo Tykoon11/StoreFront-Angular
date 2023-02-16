@@ -1,0 +1,35 @@
+#main {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  background-color: orange;
+  justify-content: space-between;
+}
+.links1 {
+  display: flex;
+  padding: 0.7em 5em;
+}
+.links1 a {
+  padding: 1.42em 1.5em;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+}
+.links1 a:hover {
+  background-color: #0549af;
+  color: orange;
+}
+.links2 {
+  display: flex;
+  padding: 0.7em 5em;
+}
+.links2 a {
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 1.42em 1.5em;
+  color: white;
+}
+.links2 a:hover {
+  background-color: #0549af;
+  color: orange;
+}

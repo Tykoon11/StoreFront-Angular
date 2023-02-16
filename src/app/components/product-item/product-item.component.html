@@ -1,0 +1,25 @@
+<div id="product-container">
+  <div id="product-card">
+    <a [routerLink]="['/product', product.id]">
+      .<img src="{{ product.url }}" alt="" width="200" />
+    </a>
+    <span id="card-details"
+      ><h3>{{ product.name }}</h3>
+      -
+      <p>{{ product.price | currency }}</p>
+    </span>
+    <p>{{ product.description }}</p>
+
+    <div>
+      Quantity:
+      <input
+        type="number"
+        name="amount"
+        [(ngModel)]="product.amount"
+        aria-label="amount"
+      />
+    </div>
+  </div>
+</div>
+<br />
+<button (click)="addToCart(product)">Add to cart</button>

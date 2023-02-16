@@ -1,0 +1,23 @@
+<div id="main-container">
+  <div id="container" *ngIf="product">
+    <div><img src="{{ product.url }}" alt="" width="300" /></div>
+    <div class="content">
+      <h1>{{ product.name }}</h1>
+      <h2>{{ product.price | currency }}</h2>
+      <p>{{ product.description }}</p>
+      <p class="qty">Quantity:</p>
+      <input
+        type="number"
+        name="amount"
+        [(ngModel)]="product.amount"
+        aria-label="amount"
+      />
+      <br />
+      <br />
+      <br />
+      <button (click)="addToCart(product)">Add to cart</button>
+      <br />
+      <a class="back-link" routerLink="/">Back to Home</a>
+    </div>
+  </div>
+</div>
