@@ -38,6 +38,7 @@
   background-color: #0245ac;
   border: none;
   color: white;
+  border-radius: 0.5em;
 }
 .buttons {
   position: relative;
@@ -54,9 +55,7 @@
   cursor: pointer;
 }
 #empty-can {
-  padding-top: 8%;
-  border: 3px solid red;
-  height: 92vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,6 +100,7 @@ input {
   padding: 0.5em 2em;
   cursor: pointer;
   background-color: #0245ac;
+  border-radius: 0.5em;
   border: none;
   color: white;
   display: inline;

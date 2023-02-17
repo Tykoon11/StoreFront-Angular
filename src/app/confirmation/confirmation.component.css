@@ -10,6 +10,11 @@ button {
   background-color: #0648af;
   border: none;
   border-radius: 1em;
+  cursor: pointer;
+  color: white;
+}
+button:hover {
+  color: orange;
 }
 .sub {
   padding: 3em;
