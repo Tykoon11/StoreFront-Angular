@@ -1,45 +1,68 @@
 <div *ngIf="cart.length !== 0; else elseBlock">
   <div class="main">
     <div class="main-can">
-      <div class="item-can" *ngFor="let item of cart">
-        <div><img src="{{ item.url }}" width="150" alt="" /></div>
+      <div class="item-can" *ngFor="let product of cart">
+        <div><img src="{{ product.url }}" width="150" alt="" /></div>
         <div class="item-text">
-          <h2>{{ item.name }}</h2>
-          <h3>{{ item.price | currency : "EUR" }}</h3>
+          <h2>{{ product.name }}</h2>
+          <h3>{{ product.price | currency : "EUR" }}</h3>
+          <h3>Quantity:</h3>
+          <input
+            class="qty"
+            type="number"
+            name="amount"
+            [(ngModel)]="product.amount"
+            aria-label="amount"
+          />
+          <button (click)="removeItem(product)">Remove</button>
         </div>
       </div>
     </div>
     <div class="main-can2">
-      <form (ngSubmit)="submitForm()">
+      <form #form="ngForm" (ngSubmit)="submitForm()">
         <h3>Full Name</h3>
         <input
+          required
+          minlength="5"
           type="text"
           name="fullName"
-          placeholder="(enter your full name)"
+          placeholder="(minimum  of 5 characters)"
           [(ngModel)]="fullName"
         />
         <h3>Address</h3>
         <input
+          required
+          minlength="10"
           type="text"
           name="address"
-          placeholder="(enter your address)"
+          placeholder="(minimum  of 10 characters)"
           [(ngModel)]="address"
         />
         <h3>Credit Card Number</h3>
         <input
           type="number"
+          required
           name="creditCard"
-          placeholder="(enter your credit card number)"
+          placeholder="(Insert Credit Card Number)"
           [(ngModel)]="creditCard"
         />
-        <button id="submit" type="submit">Check Out</button>
+        <br>
+        <h2>Total: {{ calculation() | currency }}</h2>
+        <button routerLink="/"> Back to Home</button>
+        <button id="submit" [disabled]="form.invalid" type="submit">
+          Check Out
+        </button>
       </form>
     </div>
   </div>
 </div>
+
 <ng-template #elseBlock>
-  <h1>
-    Your Cart is Empty. <br />
-    Please Add Items!
-  </h1>
+  <div id="empty-can">
+    <div class="empty">
+      <h1>Your Cart is Empty.</h1>
+      <h1>Please Add Items!</h1>
+      <button routerLink="/"> Back to Home</button>
+    </div>
+  </div>
 </ng-template>

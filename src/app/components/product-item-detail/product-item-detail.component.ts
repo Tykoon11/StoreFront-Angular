@@ -16,14 +16,9 @@ export class ProductItemDetailComponent implements OnInit {
 
   products: Product[] = [];
   product: Product | undefined = {} as Product;
-  finalPrice: number = '' as unknown as number;
 
   addToCart(product: Product) {
     this.productsService.addToCart(product);
-    this.finalPrice = product.amount
-      ? product.price * product.amount
-      : product.price;
-    console.log(this.finalPrice);
     alert(
       product.amount
         ? `${product.amount} ${product.name}s added to cart`
@@ -40,5 +35,6 @@ export class ProductItemDetailComponent implements OnInit {
     this.product = this.products.find(
       (product) => product.id === productIdFromRoute
     );
+    this.product ? (this.product.amount = 1) : this.product;
   }
 }

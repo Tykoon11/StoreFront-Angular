@@ -13,6 +13,5 @@ export class ConfirmationComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.getUserService.getUser();
-    console.log(this.user)
   }
 }

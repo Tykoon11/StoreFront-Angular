@@ -59,18 +59,24 @@ export class ProductsService {
     ];
   }
 
+  clearCart() {
+    this.cart = [];
+  }
+  removeItem(product: Product) {
+    this.cart = this.cart.filter((item) => item.id !== product.id);
+  }
+
   addToCart(product: Product) {
     const cart = this.cart.filter(
       (productItem) => productItem.id === product.id
     );
     if (cart.length > 0) {
-      console.log(this.cart);
-      return this.cart;
     } else {
       this.cart.push(product);
-      console.log(this.cart);
-      return this.cart;
     }
+  }
+  getCart() {
+    return this.cart;
   }
   addUser(user: User) {
     this.user = user;

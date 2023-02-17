@@ -14,5 +14,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
+    this.products.map((product: Product) => product.amount = 1)
   }
 }

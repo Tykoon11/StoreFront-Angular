@@ -9,16 +9,11 @@ import { ProductsService } from 'src/app/products.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product = {} as Product;
-  finalPrice: number = '' as unknown as number;
 
   constructor(private addToCartService: ProductsService) {}
 
   addToCart(product: Product) {
     this.addToCartService.addToCart(product);
-    this.finalPrice = product.amount
-      ? product.price * product.amount
-      : product.price;
-    console.log(this.finalPrice);
     alert(
       product.amount
         ? `${product.amount} ${product.name}(s) added to cart`

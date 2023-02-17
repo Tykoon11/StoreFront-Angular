@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from 'src/app/products.service';
 import { Product } from 'src/app/models/product';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
   address: string = '';
   creditCard: number = '' as unknown as number;
   cart: Product[] = [];
-  product: Product = {} as Product;
+  finalPrice: number = '' as unknown as number;
 
   submitForm() {
     const user = {
@@ -28,8 +28,10 @@ export class CartComponent implements OnInit {
       creditCard: this.creditCard as number,
     };
 
-    this.addToCartService.addUser(user);
+    this.cart = [];
+    this.addToCartService.clearCart();
 
+    this.addToCartService.addUser(user);
     this.fullName = '' as string;
     this.address = '' as string;
     this.creditCard = '' as unknown as number;
@@ -39,11 +41,18 @@ export class CartComponent implements OnInit {
     });
   }
 
+  removeItem(product: Product) {
+    this.cart = this.cart.filter((item) => item.id !== product.id);
+    this.addToCartService.removeItem(product);
+  }
+
+  calculation() {
+    return this.cart
+      .map((product) => (product.amount ?? 1) * product.price)
+      .reduce((a, b) => a + b);
+  }
+
   ngOnInit(): void {
-    if (this.product.id) {
-      this.cart = this.addToCartService.addToCart(this.product);
-    }else{
-      this.cart = []
-    }
+    this.cart = this.addToCartService.getCart();
   }
 }

@@ -6,36 +6,78 @@
 }
 .main-can {
   background-color: aliceblue;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
   width: 22%;
   padding: 1% 3% 3% 3%;
-  border: 3px solid orange;
+  border-top: 5px solid orange;
+  border-left: 5px solid orange;
+  border-bottom: 5px solid orange;
 }
 .item-can {
   display: flex;
   margin: 15% 0;
 }
 .item-text {
-  /* padding: 5%; */
-  border: 3px solid red;
+  padding: 1em 0 0 3em;
 }
 .main-can2 {
-  /* border-radius: 2em; */
   background-color: aliceblue;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
   height: 25.1vh;
-  width: 45%;
-  padding: 3%;
-  border-left: 6px solid orange;
+  width: 40%;
+  padding: 5%;
+  /* border-left: 5px solid #0245ac; */
+  border-top: 5px solid orange;
+  border-right: 5px solid orange;
+  border-bottom: 5px solid orange;
 }
 #submit {
-  height: 5em;
-  width: 8em;
+  margin-left: 25em;
+  padding: 1.5em 3em;
   cursor: pointer;
-  position: relative;
-  bottom: 5em;
-  left: 40em;
-   background-color: #0245ac;
+  background-color: #0245ac;
   border: none;
   color: white;
-  
-  
+  display: inline;
+}
+#empty-can {
+  padding-top: 8%;
+  border: 3px solid red;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 3.2em;
+}
+h3 {
+  margin: 0;
+  padding: 1em 0 0.5em 0;
+}
+h2 {
+  display: inline;
+}
+.empty {
+  background-color: #c9d9f4;
+  border-radius: 3em;
+  border: 5px solid orange;
+  color: #0245ac;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  width: 40%;
+  display: block;
+}
+.item-text {
+  border-right: 3px solid #0245ac;
+  padding-right: 3em;
+}
+.qty {
+  margin-left: 1em;
 }
