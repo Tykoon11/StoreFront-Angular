@@ -14,44 +14,52 @@
             [(ngModel)]="product.amount"
             aria-label="amount"
           />
-          <button (click)="removeItem(product)">Remove</button>
+          <div>
+            <button class="removeBtn" (click)="removeItem(product)">
+              Remove
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div class="main-can2">
       <form #form="ngForm" (ngSubmit)="submitForm()">
-        <h3>Full Name</h3>
-        <input
-          required
-          minlength="5"
-          type="text"
-          name="fullName"
-          placeholder="(minimum  of 5 characters)"
-          [(ngModel)]="fullName"
-        />
-        <h3>Address</h3>
-        <input
-          required
-          minlength="10"
-          type="text"
-          name="address"
-          placeholder="(minimum  of 10 characters)"
-          [(ngModel)]="address"
-        />
-        <h3>Credit Card Number</h3>
-        <input
-          type="number"
-          required
-          name="creditCard"
-          placeholder="(Insert Credit Card Number)"
-          [(ngModel)]="creditCard"
-        />
-        <br>
-        <h2>Total: {{ calculation() | currency }}</h2>
-        <button routerLink="/"> Back to Home</button>
-        <button id="submit" [disabled]="form.invalid" type="submit">
-          Check Out
-        </button>
+        <div>
+          <h3>Full Name</h3>
+          <input
+            required
+            minlength="5"
+            type="text"
+            name="fullName"
+            placeholder="(minimum  of 5 characters)"
+            [(ngModel)]="fullName"
+          />
+          <h3>Address</h3>
+          <input
+            required
+            minlength="10"
+            type="text"
+            name="address"
+            placeholder="(minimum  of 10 characters)"
+            [(ngModel)]="address"
+          />
+          <h3>Credit Card Number</h3>
+          <input
+            type="number"
+            required
+            name="creditCard"
+            placeholder="(Insert Credit Card Number)"
+            [(ngModel)]="creditCard"
+          />
+          <br />
+          <h2 class="total">Total: {{ calculation() | currency }}</h2>
+        </div>
+        <div class="buttons">
+          <button id="home" routerLink="/">Back to Home</button>
+          <button id="submit" [disabled]="form.invalid" type="submit">
+            Check Out
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -62,7 +70,7 @@
     <div class="empty">
       <h1>Your Cart is Empty.</h1>
       <h1>Please Add Items!</h1>
-      <button routerLink="/"> Back to Home</button>
+      <button routerLink="/">Back to Home</button>
     </div>
   </div>
 </ng-template>

@@ -1,46 +1,57 @@
 .main {
-  padding: 10% 5% 0 5%;
+  padding: 10% 5% 5% 5%;
   border: 3px solid red;
   display: flex;
   justify-content: center;
 }
 .main-can {
   background-color: aliceblue;
-  border-top-left-radius: 2em;
-  border-bottom-left-radius: 2em;
+  border-radius: 2em;
+  padding: 3.5em 1em;
   width: 22%;
-  padding: 1% 3% 3% 3%;
-  border-top: 5px solid orange;
-  border-left: 5px solid orange;
-  border-bottom: 5px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid orange;
 }
 .item-can {
   display: flex;
-  margin: 15% 0;
+  padding: 1em 0;
+  border-bottom: 2px solid orange;
 }
 .item-text {
-  padding: 1em 0 0 3em;
+  color: #0245ac;
 }
 .main-can2 {
   background-color: aliceblue;
-  border-top-right-radius: 2em;
-  border-bottom-right-radius: 2em;
+  border-radius: 2em;
   height: 25.1vh;
   width: 40%;
   padding: 5%;
-  /* border-left: 5px solid #0245ac; */
-  border-top: 5px solid orange;
-  border-right: 5px solid orange;
-  border-bottom: 5px solid orange;
+  border: 5px solid orange;
+  margin-left: 3em;
 }
 #submit {
-  margin-left: 25em;
   padding: 1.5em 3em;
   cursor: pointer;
   background-color: #0245ac;
   border: none;
   color: white;
-  display: inline;
+}
+.buttons {
+  position: relative;
+  left: 20em;
+  bottom: 2em;
+}
+.removeBtn {
+  margin-top: 1em;
+  background-color: #0245ac;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0 0.5em;
+  cursor: pointer;
 }
 #empty-can {
   padding-top: 8%;
@@ -48,6 +59,13 @@
   height: 92vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.item-text {
+  display: flex;
+  flex-direction: column;
+  padding-right: 3em;
+
   align-items: center;
 }
 h1 {
@@ -74,10 +92,26 @@ input {
   width: 40%;
   display: block;
 }
-.item-text {
-  border-right: 3px solid #0245ac;
-  padding-right: 3em;
+
+.total {
+  display: block;
+  margin: 0;
 }
-.qty {
-  margin-left: 1em;
+#home {
+  padding: 0.5em 2em;
+  cursor: pointer;
+  background-color: #0245ac;
+  border: none;
+  color: white;
+  display: inline;
+  margin-right: 2em;
+}
+#home:hover {
+  color: orange;
+}
+#submit:hover {
+  color: orange;
+}
+button:hover {
+  color: orange;
 }
