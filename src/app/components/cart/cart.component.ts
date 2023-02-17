@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
     this.addToCartService.clearCart();
 
     this.addToCartService.addUser(user);
+    console.log(user);
     this.fullName = '' as string;
     this.address = '' as string;
     this.creditCard = '' as unknown as number;

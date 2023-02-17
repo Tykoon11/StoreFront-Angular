@@ -25,13 +25,12 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
-button :hover {
-  transform: scale(1.5);
-  cursor: pointer;
+.add:hover {
+  color: orange;
 }
 img {
   cursor: pointer;
 }
-input{
+input {
   width: 60px;
 }

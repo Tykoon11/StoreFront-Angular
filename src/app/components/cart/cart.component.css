@@ -32,7 +32,7 @@
   border: 5px solid orange;
   margin-left: 3em;
 }
-#submit {
+.submit {
   padding: 1.5em 3em;
   cursor: pointer;
   background-color: #0245ac;
@@ -109,7 +109,7 @@ input {
 #home:hover {
   color: orange;
 }
-#submit:hover {
+.submit:hover {
   color: orange;
 }
 button:hover {

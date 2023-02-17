@@ -80,6 +80,7 @@ export class ProductsService {
   }
   addUser(user: User) {
     this.user = user;
+    console.log(`first ${this.user}`);
   }
   getUser() {
     return this.user;
