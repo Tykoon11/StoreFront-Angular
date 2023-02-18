@@ -11,6 +11,7 @@
             class="qty"
             type="number"
             name="amount"
+            (ngModelChange)="addAmount(product)"
             [(ngModel)]="product.amount"
             aria-label="amount"
           />

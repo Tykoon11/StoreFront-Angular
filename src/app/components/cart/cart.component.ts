@@ -46,11 +46,15 @@ export class CartComponent implements OnInit {
     this.cart = this.cart.filter((item) => item.id !== product.id);
     this.addToCartService.removeItem(product);
   }
-
   calculation() {
     return this.cart
       .map((product) => (product.amount ?? 1) * product.price)
       .reduce((a, b) => a + b);
+  }
+  addAmount(product: Product) {
+    if ((product.amount as number) <= 1) {
+      this.removeItem(product);
+    }
   }
 
   ngOnInit(): void {
