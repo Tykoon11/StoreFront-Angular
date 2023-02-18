@@ -64,6 +64,7 @@ export class ProductsService {
   }
   removeItem(product: Product) {
     this.cart = this.cart.filter((item) => item.id !== product.id);
+    alert('Item is removed from cart');
   }
 
   addToCart(product: Product) {
