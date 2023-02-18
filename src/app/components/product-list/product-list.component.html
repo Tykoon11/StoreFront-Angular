@@ -1,7 +1,7 @@
 <div>
   <div class="main">
     <ng-container *ngFor="let product of products">
-      <app-product-item class="item" [product]="product"></app-product-item>
+      <app-product-item (productEmitter)="addToCart(product)" class="item" [product]="product"></app-product-item>
     </ng-container>
   </div>
 </div>

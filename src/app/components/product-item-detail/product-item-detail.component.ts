@@ -27,14 +27,15 @@ export class ProductItemDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe((res) => {
+      this.products = res;
+      const routeParams = this.route.snapshot.paramMap;
+      const productIdFromRoute = Number(routeParams.get('id'));
 
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('id'));
-
-    this.product = this.products.find(
-      (product) => product.id === productIdFromRoute
-    );
-    this.product ? (this.product.amount = 1) : this.product;
+      this.product = this.products.find(
+        (product) => product.id === productIdFromRoute
+      );
+      this.product ? (this.product.amount = 1) : this.product;
+    });
   }
 }

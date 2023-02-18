@@ -10,10 +10,22 @@ import { Product } from '../../models/product';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductsService) {}
+  constructor(private addToCartService: ProductsService) {}
+
+  addToCart(product: Product) {
+    this.addToCartService.addToCart(product);
+    alert(
+      product.amount
+        ? `${product.amount} ${product.name}(s) added to cart`
+        : ` 1 ${product.name} added to cart`
+    );
+  }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.products.map((product: Product) => product.amount = 1)
+    this.addToCartService.getProducts().subscribe((res) => {
+      this.products = res;
+    });
+
+    this.products.map((product: Product) => (product.amount = 1));
   }
 }
